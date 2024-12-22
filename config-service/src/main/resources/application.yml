@@ -1,5 +1,5 @@
 server:
-  port: 8888 # Le port par défaut pour le Spring Cloud Config Server
+  port: 8888
 
 spring:
   application:
@@ -10,10 +10,10 @@ spring:
         git:
           uri: https://github.com/NaoufalElAlaouiLamrani/config-service
           search-paths: src/main/resources
-          # L'URL de votre dépôt GitHub
+          default-label: main
           clone-on-start: true
-          default-label: main # Branche principale de votre dépôt GitHub
-
 logging:
   level:
-    org.springframework.cloud.config.server: DEBUG # Activez les logs pour le debug si nécessaire
+    org.springframework.cloud.config.server: DEBUG
+    org.eclipse.jgit: DEBUG
+    
