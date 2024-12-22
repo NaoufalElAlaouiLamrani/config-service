@@ -8,7 +8,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/NaoufalElAlaouiLamrani/config-service # L'URL de votre dépôt GitHub
+          uri: https://github.com/NaoufalElAlaouiLamrani/config-service
+          search-paths: src/main/resources
+          # L'URL de votre dépôt GitHub
           clone-on-start: true
           default-label: main # Branche principale de votre dépôt GitHub
 
