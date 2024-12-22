@@ -9,7 +9,7 @@ spring:
       server:
         git:
           uri: https://github.com/NaoufalElAlaouiLamrani/config-service
-          search-paths: src/main/resources/commande-service.yml
+          search-paths: src/main/resources
           default-label: main
           clone-on-start: true
 logging:
