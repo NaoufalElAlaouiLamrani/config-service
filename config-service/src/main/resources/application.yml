@@ -9,11 +9,10 @@ spring:
       server:
         git:
           uri: https://github.com/NaoufalElAlaouiLamrani/config-service
-          search-paths: src/main/resources
+          search-paths: src/main/resources/commande-service.yml
           default-label: main
           clone-on-start: true
 logging:
   level:
     org.springframework.cloud.config.server: DEBUG
     org.eclipse.jgit: DEBUG
-    
