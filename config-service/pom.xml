@@ -1,19 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>config-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-    <name>Config Service</name>
-    <description>Spring Cloud Config Service</description>
-
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.1</version>
-        <relativePath />
+        <version>3.1.4</version> <!-- Version compatible avec Spring Cloud -->
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <groupId>emsi.projet</groupId>
+    <artifactId>config-service</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>config-service</name>
+    <description>config-service</description>
+
+    <properties>
+        <java.version>21</java.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Cloud Dependencies -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2022.0.5</version> <!-- Version "Oak" compatible avec Spring Boot 3.1.x -->
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <!-- Spring Cloud Config Server -->
@@ -28,7 +44,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Spring Boot Actuator -->
+        <!-- Spring Boot Starter Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -40,14 +56,23 @@
             <artifactId>org.eclipse.jgit</artifactId>
         </dependency>
 
-        <!-- (Optional) Validation and Security -->
+        <!-- Spring Boot Starter Security (optional) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Starter Validation (optional) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+
+        <!-- Spring Boot Starter Test (for testing) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -60,15 +85,4 @@
         </plugins>
     </build>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>2022.0.4</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 </project>
