@@ -8,4 +8,4 @@ spring:
     password:
 
 mes-config-ms:
-  commandes-last: 10
+  commandes-last: 3
