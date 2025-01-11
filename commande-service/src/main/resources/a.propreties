@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: commande-service # Nom du service à enregistrer
+  cloud:
+    loadbalancer:
+      enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # L'URL du serveur Eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+    port: 8081
+
+config:
+  import: optional:configserver:http://localhost:8888
+
+  cloud:
+    discovery:
+      enabled: false
+    config:
+      enabled: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  datasource:
+    url: jdbc:h2:mem:commandes-db
+
+  management:
+    endpoints:
+      web:
+        exposure:
+          include: "*" # Pour exposer tous les endpoints Actuator
+    endpoint:
+      health:
+        show-details: always # Pour afficher les détails dans /actuator/health
+
+logging:
+  level:
+    org.springframework.cloud.config.client: DEBUG
+    org.eclipse.jgit: DEBUG
