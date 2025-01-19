@@ -1,0 +1,16 @@
+{
+  "properties": [
+    {
+      "name": "management.endpoints.web.exposure.include",
+      "type": "java.lang.String",
+      "description": "Expose les endpoints Actuator",
+      "defaultValue": "*"
+    },
+    {
+      "name": "management.endpoint.health.show-details",
+      "type": "java.lang.String",
+      "description": "Affiche les détails de l'état de santé",
+      "defaultValue": "always"
+    }
+  ]
+}

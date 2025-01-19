@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: r1
+          uri: lb://CO-SERVICE
+          predicates:
+            - Path=/api/commandev2s/**
+        - id: r2
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/api/produits/**
